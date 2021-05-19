@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `tanimon's Blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `tanimon`,
+      summary: `大阪の SIer で働く20代後半エンジニア。20代のうちに独立することを目標に稼ぐための技術を勉強しています。`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `20代エンジニアが稼ぐ力を身につけるために勉強したことをアウトプットするブログ。`,
+    siteUrl: `https://tanimon.vercel.app/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `tanimon_dev`,
     },
   },
   plugins: [
@@ -112,8 +112,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `tanimon's Blog`,
+        short_name: `tanimon`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
