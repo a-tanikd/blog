@@ -8,12 +8,19 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, PageProps } from "gatsby"
 
-const Seo = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
+type Props = {
+  description?: string,
+  lang?: string,
+  meta?: HTMLMetaElement[],
+  title: string
+}
+
+const Seo: React.FC<Props> = ({ description, lang, meta, title }) => {
+  const { site } = useStaticQuery<GatsbyTypes.SeoQuery>(
     graphql`
-      query {
+      query Seo {
         site {
           siteMetadata {
             title
@@ -36,7 +43,7 @@ const Seo = ({ description, lang, meta, title }) => {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : ""}
       meta={[
         {
           name: `description`,
@@ -70,7 +77,7 @@ const Seo = ({ description, lang, meta, title }) => {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ].concat(meta ?? [])}
     />
   )
 }
@@ -84,6 +91,7 @@ Seo.defaultProps = {
 Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
+  //@ts-ignore todo: どう型づけすればいいか調べる
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 }
