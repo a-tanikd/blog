@@ -40,7 +40,7 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data, loca
               >
                 <header>
                   <h2>
-                    <Link to={post.fields?.slug!} itemProp="url">
+                    <Link to={post.fields?.slug ?? ""} itemProp="url">
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
