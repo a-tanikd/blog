@@ -6,9 +6,8 @@
  */
 
 import * as React from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql, PageProps } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 type Props = {
   description?: string,
@@ -34,13 +33,13 @@ const Seo: React.FC<Props> = ({ description, lang, meta, title }) => {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description || site?.siteMetadata?.description
+  const defaultTitle = site?.siteMetadata?.title
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: lang ?? 'en',
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : ""}
@@ -67,7 +66,7 @@ const Seo: React.FC<Props> = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.social?.twitter || ``,
+          content: site?.siteMetadata?.social?.twitter || ``,
         },
         {
           name: `twitter:title`,
@@ -80,20 +79,6 @@ const Seo: React.FC<Props> = ({ description, lang, meta, title }) => {
       ].concat(meta ?? [])}
     />
   )
-}
-
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  //@ts-ignore todo: どう型づけすればいいか調べる
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
 export default Seo
