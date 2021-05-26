@@ -17,15 +17,23 @@ type Props = {
 }
 
 const Seo: React.FC<Props> = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery<GatsbyTypes.SeoQuery>(
+  const { site, file } = useStaticQuery<GatsbyTypes.SeoQuery>(
     graphql`
       query Seo {
         site {
           siteMetadata {
             title
             description
+            siteUrl
             social {
               twitter
+            }
+          }
+        }
+        file(relativePath: {eq: "profile-pic.png"}) {
+          childImageSharp {
+            fluid(maxWidth: 750) {
+              src
             }
           }
         }
@@ -55,6 +63,10 @@ const Seo: React.FC<Props> = ({ description, lang, meta, title }) => {
         {
           property: `og:description`,
           content: metaDescription,
+        },
+        {
+          property: `og:image`,
+          content: `${site?.siteMetadata?.siteUrl}${file?.childImageSharp?.fluid?.src}` ?? ``,
         },
         {
           property: `og:type`,

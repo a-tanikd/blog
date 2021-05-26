@@ -6,10 +6,11 @@ module.exports = {
       summary: '大阪の SIer で働く20代後半エンジニア。20代のうちに独立することを目標に稼ぐための技術を勉強しています。',
     },
     description: '20代エンジニアが稼ぐ力を身につけるために勉強したことをアウトプットするブログ。',
-    siteUrl: 'https://tanimon.vercel.app/',
+    siteUrl: 'https://tanimon.vercel.app',
     social: {
       twitter: 'tanimon_dev',
     },
+    profilePic: 'src/images/profile-pic.png',
   },
   plugins: [
     'gatsby-plugin-image',
