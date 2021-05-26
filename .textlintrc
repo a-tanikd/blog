@@ -1,0 +1,44 @@
+{
+  "filters": {},
+  "rules": {
+    "@textlint-ja/no-synonyms": true,
+    "@textlint-rule/no-invalid-control-character": true,
+    "@textlint-rule/no-unmatched-pair": true,
+    "date-weekday-mismatch": true,
+    "ja-hiragana-hojodoushi": true,
+    "ja-hiragana-keishikimeishi": true,
+    "ja-no-abusage": true,
+    "ja-no-mixed-period": true,
+    "ja-no-orthographic-variants": true,
+    "ja-no-redundant-expression": true,
+    "ja-unnatural-alphabet": true,
+    "max-comma": true,
+    "max-number-of-lines": true,
+    "max-ten": true,
+    "no-dead-link": {
+      "ignoreRedirects": true
+    },
+    "no-doubled-joshi": {
+      // 助詞のうち「も」「や」は複数回の出現を許す
+      "allow": ["も", "や"],
+      "commaCharacters": ["、", "，", ","]
+    },
+    "no-hoso-kinshi-yogo": true,
+    "no-mix-dearu-desumasu": {
+      "preferInHeader": "", // "である" or "ですます"
+      "preferInBody": "ですます", // "である" or "ですます"
+      "preferInList": "である", // "である" or "ですます"
+      // 文末以外でも、敬体(ですます調)と常体(である調)を厳しくチェックするかどうか
+      "strict": false
+    },
+    "no-nfd": true,
+    "no-start-duplicated-conjunction": true,
+    "no-zero-width-spaces": true,
+    "period-in-list-item": {
+      "allowOrderedList": true
+    },
+    "spellcheck-tech-word": true,
+    "terminology": true,
+    "use-si-units": true
+  }
+}
