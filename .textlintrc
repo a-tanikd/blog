@@ -6,9 +6,15 @@
     "@textlint-rule/no-unmatched-pair": true,
     "date-weekday-mismatch": true,
     "ja-hiragana-hojodoushi": true,
-    "ja-hiragana-keishikimeishi": true,
+    // 「知りたい方は」に対して「方 => ほう」と修正せよと誤ったエラーが出るため、無効化する
+    // "ja-hiragana-keishikimeishi": true,
     "ja-no-abusage": true,
-    "ja-no-mixed-period": true,
+    // 問題ないはずなのに、エラーが発生するため、バグがありそう
+    // 文末の絵文字に対してエラーが発生する
+    // いったん、無効にする
+    // "ja-no-mixed-period": {
+    //   "allowEmojiAtEnd": true
+    // },
     "ja-no-orthographic-variants": true,
     "ja-no-redundant-expression": true,
     "ja-unnatural-alphabet": true,
@@ -16,11 +22,11 @@
     "max-number-of-lines": true,
     "max-ten": true,
     "no-dead-link": {
+      "ignore": ["http://localhost*"],
       "ignoreRedirects": true
     },
     "no-doubled-joshi": {
-      // 助詞のうち「も」「や」は複数回の出現を許す
-      "allow": ["も", "や"],
+      "allow": ["も", "や", "とか"],
       "commaCharacters": ["、", "，", ","]
     },
     "no-hoso-kinshi-yogo": true,
