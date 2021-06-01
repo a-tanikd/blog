@@ -103,8 +103,8 @@ Gatsby CLI version: 3.6.0
 $ gatsby new <project-dir> https://github.com/gatsbyjs/gatsby-starter-blog
 ```
 
-Gatsby には Sterter と呼ばれる、プロジェクトのテンプレートのようなものが多数存在します。  
-Sterter の一覧は[ここ](https://www.gatsbyjs.com/starters/?)で見られます。
+Gatsby には Starter と呼ばれる、プロジェクトのテンプレートのようなものが多数存在します。  
+Starter の一覧は[ここ](https://www.gatsbyjs.com/starters/?)で見られます。
 
 今回は [gatsby-starter-blog](https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-blog/) という、
 ブログ向けの Starter を利用しています。  
