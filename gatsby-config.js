@@ -3,7 +3,7 @@ module.exports = {
     title: 'tanimon\'s Blog',
     author: {
       name: 'tanimon',
-      summary: '大阪の SIer で働く20代後半エンジニア。20代のうちに独立することを目標に稼ぐための技術を勉強しています。',
+      summary: '20代後半SIer勤務👨‍💼好奇心が強すぎる雑食系エンジニア👨‍💻仕事にやりがいを見出だせず、収入を会社に依存していることに危機感😱稼ぐ力を高めるために、Web技術勉強中🌐最近はRustに浮気中🦀Apple信者のVim教徒です😎',
     },
     description: '20代エンジニアが稼ぐ力を身につけるために勉強したことをアウトプットするブログ。',
     siteUrl: 'https://tanimon.vercel.app',
